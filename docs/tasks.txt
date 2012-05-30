@@ -1,0 +1,62 @@
+*** BUGS ***
+
+1. Чтобы не писать  ComparableInteger implements spbau.velikiy.task4.core.Comparable лучше сделать import
+
+2. А зачем ты сделал у метода compareTo возврат 0 или +1? Обычно делают 0, число меньшее 0 или число большее 0.
+
+3. Если ты везде переопределяешь toString в наследниках Comparable, то можно было прямо в интерфейсе Comparable объявить toString. Тогда все наследники были бы обязаны его реализовывать.
+
+4. А почему не вынес этот код 
+    public void sort(List<T> list) {
+        
+        this.sort(list, new Comparator<T>() {
+            public int compare(T a, T b) {
+                return a.compareTo(b);
+            }
+        });
+
+    }
+В Sorter? Зачем тут this?
+
+5. А почему тут interface Sorter<T extends Comparable> Comparable не параметризованный?
+
+6. А зачем при сортировке создавать новый ArrayList?
+
+7. Есть такая штука Collections.swap - погляди. В данном задание было бы удобно.
+
+8. А чего ты у класса Heap съел все javadoc?
+
+9. Main конечно выглядит жутко... :)
+
+
+
+*** QUESTIONS ***
+19 марта 2012 г. 2:10 пользователь Алексей Великий <gmpota@gmail.com> написал:
+
+
+
+19 марта 2012 г. 1:39 пользователь Anton Kuznetsov <anton.m.kuznetsov@gmail.com> написал:
+
+1. Чтобы не писать  ComparableInteger implements spbau.velikiy.task4.core.Comparable лучше сделать import
+ 
+2. А зачем ты сделал у метода compareTo возврат 0 или +1? Обычно делают 0, число меньшее 0 или число большее 0.
+
+Сделал как проще. Потом на самом деле подумал что следует сделать по-другому. 
+3. Если ты везде переопределяешь toString в наследниках Comparable, то можно было прямо в интерфейсе Comparable объявить toString. Тогда все наследники были бы обязаны его реализовывать.
+
+4. А почему не вынес этот код 
+    public void sort(List<T> list) {
+        
+        this.sort(list, new Comparator<T>() {
+            public int compare(T a, T b) {
+               return a.compareTo(b);
+            }
+        });
+
+    }
+В Sorter? Зачем тут this?
+
+this  я пишу иногда вроде как для стиля, что бы понимать что я вызываю свойже метод. 
+Код не вынес потому что не знаю. Он е мленький совсем.... 
+
+Маленький - это да. Но писать нужно одно и тоже в каждом (!) наследнике Sort, а это не очень хорошо...
