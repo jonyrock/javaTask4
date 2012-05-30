@@ -6,7 +6,7 @@ package spbau.velikiy.task4.types;
  * @author Alexey Velikiy. APTU. Java. Homework 4.
  * @version %I%, %G%
  */
-public class ComparableInteger implements spbau.velikiy.task4.core.Comparable<ComparableInteger> {
+public class ComparableInteger implements Comparable<ComparableInteger> {
 
     /**
      * real value
@@ -29,7 +29,9 @@ public class ComparableInteger implements spbau.velikiy.task4.core.Comparable<Co
      * @return 1 if a >= x and 0 otherwise
      */
     public int compareTo(ComparableInteger x) {
-        return (value >= x.value) ? 1 : 0;
+        if (value == x.value)
+            return 0;
+        return (value > x.value) ? 1 : -1;
     }
 
     /**

@@ -4,6 +4,7 @@ package spbau.velikiy.task4.sorters;
 import spbau.velikiy.task4.core.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -12,21 +13,7 @@ import java.util.List;
  * @author Alexey Velikiy. APTU. Java. Homework 4.
  * @version %I%, %G%
  */
-public class ShakerSort<T extends spbau.velikiy.task4.core.Comparable<T>> implements Sorter<T> {
-
-    /**
-     * sorts elements in list with comparable objects 
-     * @param list for sorting
-     */
-    public void sort(List<T> list) {
-
-        this.sort(list, new Comparator<T>() {
-            public int compare(T a, T b) {
-                return a.compareTo(b);
-            }
-        });
-
-    }
+public class ShakerSort<T extends Comparable<T>> extends AbstractSorter<T> {
 
     /**
      * sorts elements in list with comparable objects 
@@ -45,14 +32,14 @@ public class ShakerSort<T extends spbau.velikiy.task4.core.Comparable<T>> implem
             exchange = false;
             
             for (a = count - 1; a > 0; --a) {
-                if (comparator.compare(data.get(a - 1), data.get(a)) == 0) {
+                if (comparator.compare(data.get(a - 1), data.get(a)) == 1) {
                     swap(data, a - 1, a);
                     exchange = true;
                 }
             }
             
             for (a = 1; a < count; ++a) {
-                if (comparator.compare(data.get(a - 1), data.get(a)) == 0) {
+                if (comparator.compare(data.get(a - 1), data.get(a)) == 1) {
                     swap(data, a - 1, a);
                     exchange = true;
                 }

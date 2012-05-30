@@ -1,8 +1,8 @@
 package spbau.velikiy.task4.comparators;
 
-
-import spbau.velikiy.task4.core.Comparator;
 import spbau.velikiy.task4.types.ComparableInteger;
+
+import java.util.Comparator;
 
 /**
  * Comparing by mod
@@ -34,7 +34,11 @@ public class IntegerModComparator implements Comparator<ComparableInteger> {
      * @return 1 if a%n >= b%n and 0 otherwise
      */
     public int compare(ComparableInteger a, ComparableInteger b) {
-        return (a.value % n >= b.value % n) ? 1 : 0;
+        int mod1 = a.value % n;
+        int mod2 = b.value % n;
+        if (mod1 == mod2)
+            return 0;
+        return (mod1 > mod2) ? 1 : -1;
     }
 
 }

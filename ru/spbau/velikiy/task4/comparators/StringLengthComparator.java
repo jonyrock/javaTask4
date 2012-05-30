@@ -1,8 +1,8 @@
 package spbau.velikiy.task4.comparators;
 
-
-import spbau.velikiy.task4.core.Comparator;
 import spbau.velikiy.task4.types.ComparableString;
+
+import java.util.Comparator;
 
 /**
  * Comparing by string length
@@ -20,7 +20,9 @@ public class StringLengthComparator implements Comparator<ComparableString> {
      * @return 1 if length(a) >= length(b) and 0 otherwise
      */
     public int compare(ComparableString a, ComparableString b) {
-        return (a.value.length() >= b.value.length()) ? 1 : 0;
+        if(a.value.length() == b.value.length() )
+            return 0;
+        return (a.value.length() >= b.value.length()) ? 1 : -1;
     }
 
 }

@@ -2,8 +2,6 @@ package spbau.velikiy.task4;
 
 import spbau.velikiy.task4.comparators.IntegerModComparator;
 import spbau.velikiy.task4.comparators.StringLengthComparator;
-import spbau.velikiy.task4.core.Comparable;
-import spbau.velikiy.task4.core.Comparator;
 import spbau.velikiy.task4.core.Sorter;
 import spbau.velikiy.task4.sorters.HeapSort;
 import spbau.velikiy.task4.sorters.ShakerSort;
@@ -11,6 +9,7 @@ import spbau.velikiy.task4.types.ComparableInteger;
 import spbau.velikiy.task4.types.ComparableString;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -36,9 +35,9 @@ public class Main {
         System.out.println();
         integersTestWithComparators(new HeapSort<ComparableInteger>());
         System.out.println();
-        stringsTest(new HeapSort<ComparableString>());
-        System.out.println();
-        stringsTestWithComparators(new HeapSort<ComparableString>());
+//        stringsTest(new HeapSort<ComparableString>());
+//        System.out.println();
+//        stringsTestWithComparators(new HeapSort<ComparableString>());
 
         System.out.println("ShakerSort testing");
         System.out.println("------------------------------------------");
@@ -46,9 +45,9 @@ public class Main {
         System.out.println();
         integersTestWithComparators(new ShakerSort<ComparableInteger>());
         System.out.println();
-        stringsTest(new ShakerSort<ComparableString>());
-        System.out.println();
-        stringsTestWithComparators(new ShakerSort<ComparableString>());
+//        stringsTest(new ShakerSort<ComparableString>());
+//        System.out.println();
+//        stringsTestWithComparators(new ShakerSort<ComparableString>());
 
     }
 
