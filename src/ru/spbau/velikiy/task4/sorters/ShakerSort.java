@@ -1,7 +1,7 @@
-package spbau.velikiy.task4.sorters;
+package ru.spbau.velikiy.task4.sorters;
 
 
-import spbau.velikiy.task4.core.*;
+import ru.spbau.velikiy.task4.core.*;
 
 import java.util.Collections;
 import java.util.Comparator;

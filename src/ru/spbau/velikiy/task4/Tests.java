@@ -1,10 +1,10 @@
-package spbau.velikiy.task4;
+package ru.spbau.velikiy.task4;
 
-import spbau.velikiy.task4.comparators.IntegerModComparator;
-import spbau.velikiy.task4.comparators.StringLengthComparator;
-import spbau.velikiy.task4.core.Sorter;
-import spbau.velikiy.task4.types.ComparableInteger;
-import spbau.velikiy.task4.types.ComparableString;
+import ru.spbau.velikiy.task4.comparators.IntegerModComparator;
+import ru.spbau.velikiy.task4.comparators.StringLengthComparator;
+import ru.spbau.velikiy.task4.core.Sorter;
+import ru.spbau.velikiy.task4.types.ComparableInteger;
+import ru.spbau.velikiy.task4.types.ComparableString;
 
 import java.util.ArrayList;
 import java.util.Comparator;

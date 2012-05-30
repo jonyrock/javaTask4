@@ -1,6 +1,6 @@
-package spbau.velikiy.task4.sorters;
+package ru.spbau.velikiy.task4.sorters;
 
-import spbau.velikiy.task4.core.AbstractSorter;
+import ru.spbau.velikiy.task4.core.AbstractSorter;
 
 import java.util.ArrayList;
 import java.util.Collections;

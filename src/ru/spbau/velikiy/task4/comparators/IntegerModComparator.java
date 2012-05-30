@@ -1,6 +1,6 @@
-package spbau.velikiy.task4.comparators;
+package ru.spbau.velikiy.task4.comparators;
 
-import spbau.velikiy.task4.types.ComparableInteger;
+import ru.spbau.velikiy.task4.types.ComparableInteger;
 
 import java.util.Comparator;
 

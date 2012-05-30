@@ -1,4 +1,4 @@
-package spbau.velikiy.task4.types;
+package ru.spbau.velikiy.task4.types;
 
 /**
  * Type with integer inside

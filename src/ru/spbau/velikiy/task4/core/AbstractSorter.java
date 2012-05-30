@@ -1,4 +1,4 @@
-package spbau.velikiy.task4.core;
+package ru.spbau.velikiy.task4.core;
 
 import java.util.Comparator;
 import java.util.List;

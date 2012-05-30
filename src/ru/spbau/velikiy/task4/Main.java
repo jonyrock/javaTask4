@@ -1,11 +1,11 @@
-package spbau.velikiy.task4;
+package ru.spbau.velikiy.task4;
 
-import spbau.velikiy.task4.sorters.HeapSort;
-import spbau.velikiy.task4.sorters.ShakerSort;
-import spbau.velikiy.task4.types.ComparableInteger;
-import spbau.velikiy.task4.types.ComparableString;
+import ru.spbau.velikiy.task4.sorters.HeapSort;
+import ru.spbau.velikiy.task4.sorters.ShakerSort;
+import ru.spbau.velikiy.task4.types.ComparableInteger;
+import ru.spbau.velikiy.task4.types.ComparableString;
 
-import static spbau.velikiy.task4.Tests.*;
+import static ru.spbau.velikiy.task4.Tests.*;
 
 /**
  * Arithmetic Parser. With functions definitions.
