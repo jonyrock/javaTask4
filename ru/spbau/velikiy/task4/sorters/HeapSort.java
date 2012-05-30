@@ -3,6 +3,7 @@ package spbau.velikiy.task4.sorters;
 import spbau.velikiy.task4.core.AbstractSorter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @author Alexey Velikiy. APTU. Java. Homework 4.
  * @version %I%, %G%
  */
-public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T>{
+public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T> {
 
     /**
      * sorts elements in list with comparable objects
@@ -32,27 +33,61 @@ public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T>{
 
     }
 
+    /**
+     * Heap data structure
+     *
+     * @param <T> inner values
+     */
     private static class Heap<T> {
-
+        /**
+         * Storing array
+         */
         public ArrayList<T> data;
+        /**
+         * Index to push
+         */
         public int topIndex = 0;
+        /**
+         * sorting comparator
+         */
         public final Comparator<T> comparator;
 
+        /**
+         * Init heap
+         *
+         * @param capacity   init values in data
+         * @param comparator for sorting
+         */
         public Heap(int capacity, Comparator<T> comparator) {
             data = new ArrayList<T>(capacity);
             this.comparator = comparator;
         }
 
+        /**
+         * Is there any element?
+         *
+         * @return Contain or not elements
+         */
         public boolean isEmpty() {
             return topIndex == 0;
         }
 
+        /**
+         * Add new element
+         *
+         * @param n value
+         */
         public void add(T n) {
             data.add(n);
             heapify(topIndex);
             topIndex++;
         }
 
+        /**
+         * Take one and remove
+         *
+         * @return element on top
+         */
         public T pop() {
             T t = data.get(0);
             data.set(0, data.get(topIndex - 1));
@@ -61,6 +96,12 @@ public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T>{
             return t;
         }
 
+        /**
+         * return structure in normal state. To top
+         *
+         * @param i begin normalize index
+         * @return new position
+         */
         public int heapify(int i) {
 
             int p;
@@ -69,7 +110,7 @@ public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T>{
                 if (comparator.compare(data.get(p), data.get(i)) != 1) {
                     break;
                 }
-                swap(p, i);
+                Collections.swap(data, p, i);
                 i = p;
             }
 
@@ -77,6 +118,12 @@ public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T>{
 
         }
 
+        /**
+         * return structure in normal state. To bottom
+         *
+         * @param i begin normalize index
+         * @return new position
+         */
         public int heapifyDown(int i) {
 
             while (true) {
@@ -97,7 +144,7 @@ public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T>{
                 }
 
                 if (comparator.compare(data.get(i), data.get(mi)) == 1) {
-                    swap(i, mi);
+                    Collections.swap(data, i, mi);
                 } else {
                     break;
                 }
@@ -110,11 +157,6 @@ public class HeapSort<T extends Comparable<T>> extends AbstractSorter<T>{
 
         }
 
-        void swap(int i, int j) {
-            T t = data.get(i);
-            data.set(i, data.get(j));
-            data.set(j, t);
-        }
 
     }
 

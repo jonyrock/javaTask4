@@ -3,7 +3,7 @@ package spbau.velikiy.task4.sorters;
 
 import spbau.velikiy.task4.core.*;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -21,26 +21,24 @@ public class ShakerSort<T extends Comparable<T>> extends AbstractSorter<T> {
      */
     public void sort(List<T> list, Comparator<T> comparator) {
 
-        ArrayList<T> data = new ArrayList<T>(list);
-
         int a;
         boolean exchange;        
-        int count = data.size();
+        int count = list.size();
 
         do {
             
             exchange = false;
             
             for (a = count - 1; a > 0; --a) {
-                if (comparator.compare(data.get(a - 1), data.get(a)) == 1) {
-                    swap(data, a - 1, a);
+                if (comparator.compare(list.get(a - 1), list.get(a)) == 1) {
+                    Collections.swap(list, a - 1, a);
                     exchange = true;
                 }
             }
             
             for (a = 1; a < count; ++a) {
-                if (comparator.compare(data.get(a - 1), data.get(a)) == 1) {
-                    swap(data, a - 1, a);
+                if (comparator.compare(list.get(a - 1), list.get(a)) == 1) {
+                    Collections.swap(list, a - 1, a);
                     exchange = true;
                 }
             }
@@ -49,14 +47,8 @@ public class ShakerSort<T extends Comparable<T>> extends AbstractSorter<T> {
 
 
         list.clear();
-        list.addAll(data);
+        list.addAll(list);
 
-    }
-
-    private void swap(ArrayList<T> data, int i, int j) {
-        T t = data.get(i);
-        data.set(i, data.get(j));
-        data.set(j, t);
     }
 
 }

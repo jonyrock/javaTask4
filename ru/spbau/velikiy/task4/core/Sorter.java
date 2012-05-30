@@ -11,7 +11,7 @@ import java.util.List;
  * @author Alexey Velikiy. APTU. Java. Homework 4.
  * @version %I%, %G%
  */
-public interface Sorter<T extends Comparable> {
+public interface Sorter<T extends Comparable<T>> {
 
     /**
      * Sort list
